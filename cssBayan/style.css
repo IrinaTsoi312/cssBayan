@@ -96,3 +96,15 @@ input[type="radio"]:checked + .card__heading {
   right: 1rem;
   width: 10px;
 }
+
+input[type="radio"]:checked ~ .meme {
+  opacity: 1;
+  max-height: 300px;
+  transition: all 1s linear;
+}
+
+input[type="radio"]:checked ~ .card__heading::after {
+  transform: rotate(90deg) translateX(-5px);
+  transition: all 0.3s linear;
+}
+
