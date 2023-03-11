@@ -1,0 +1,35 @@
+/* FONTS */
+@font-face {
+  font-family: "Neon";
+  src: local("Neon"), url("./fonts/NEON.ttf") format("ttf"), url("./fonts/NEON.eot") format("eot"), url("./fonts/NEON.otf") format("otf"), url("./fonts/NEON.woff") format("woff"), url("./fonts/NEON.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poiret One";
+  src: local("Poiret One"), url("./fonts/PoiretOne-Regular.ttf") format("ttf"), url("./fonts/PoiretOne-Regular.eot") format("eot"), url("./fonts/PoiretOne-Regular.otf") format("otf"), url("./fonts/PoiretOne-Regular.woff") format("woff"), url("./fonts/PoiretOne-Regular.woff2") format("woff2");
+}
+
+:root {
+  --yellow: rgb(255, 238, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 2rem;
+  color: #fff;
+  font-weight: 900;
+  font-family: "Rubik Iso";
+  background-color: #000;
+}
+
+main {
+  width: 100%;
+}
