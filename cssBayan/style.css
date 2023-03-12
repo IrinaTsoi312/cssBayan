@@ -174,8 +174,16 @@ input[type="radio"]:checked ~ .card__heading .icon {
     width: 30rem;
   }
 
+  .icon {
+    opacity: 0;
+  }
+
   .accordion:hover .card__heading {
     color: var(--yellow);
+  }
+
+  .accordion:hover .icon {
+    opacity: 1;
   }
   
   .accordion__card:hover .meme {
@@ -187,4 +195,4 @@ input[type="radio"]:checked ~ .card__heading .icon {
     transform: rotate(45deg) translateX(-0.1rem) translateY(0.3rem);
     transition: all 0.3s linear;
   }
-}
+} 
