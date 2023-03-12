@@ -72,6 +72,15 @@ input[type="radio"]:checked + .card__heading {
   color: var(--yellow);
 }
 
+input[type="radio"]:active + .card__heading {
+  color: #fff;
+}
+
+input[type="radio"]:active ~ .meme {
+  opacity: 0.3;
+  transition: all 0.5s linear;
+}
+
 .card__heading {
   display: flex;
   justify-content: space-between;
@@ -83,7 +92,14 @@ input[type="radio"]:checked + .card__heading {
   font-size: 1rem;
   background-color: #1f1f1f;
   cursor: pointer;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 1.3rem;
+  transition: all 0.5s linear;
 }
 
 .meme {
@@ -97,24 +113,30 @@ input[type="radio"]:checked + .card__heading {
   cursor: pointer;
 }
 
-.card__heading::after {
-  content: "\27A4";
-  margin-left: 1rem;
-  transform: rotate(0deg) translateX(0rem);
-  transition: all 0.3s linear;
-}
-
 input[type="radio"]:checked ~ .meme {
   opacity: 1;
   max-height: 100vh;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
 }
 
-input[type="radio"]:checked ~ .card__heading::after {
-  transform: rotate(90deg) translateX(-0.1rem);
+input[type="radio"]:checked ~ .card__heading .icon {
+  transform: rotate(45deg);
   transition: all 0.3s linear;
 }
 
+
+/* --- HOVER --- */
+@media (hover: hover) {
+
+  .accordion:hover .card__heading {
+    color: var(--yellow);
+  }
+  
+  .accordion__card:hover .meme {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
 
 /* --- TABLET --- */
 @media (min-width: 820px) {
@@ -126,7 +148,17 @@ input[type="radio"]:checked ~ .card__heading::after {
   .card__heading {
     font-size: 1.5rem;
     max-width: 30rem;
-    transition: all 1s linear;
+    transition: all 0.5s linear;
+  }
+
+  .icon {
+    font-size: 3rem;
+    transform: translateY(0.4rem);
+  }
+
+  input[type="radio"]:checked ~ .card__heading .icon {
+    transform: rotate(45deg) translateX(-0.1rem) translateY(0.5rem);
+    transition: all 0.3s linear;
   }
 
   .meme {
@@ -142,17 +174,6 @@ input[type="radio"]:checked ~ .card__heading::after {
     width: 30rem;
   }
 
-  .card__heading::after {
-    content: "";
-    width: 10px;
-  }
-
-  .accordion:hover .card__heading::after {
-    content: "\27A4";
-    margin-right: 1rem;
-    color: var(--yellow);
-  }
-
   .accordion:hover .card__heading {
     color: var(--yellow);
   }
@@ -161,9 +182,9 @@ input[type="radio"]:checked ~ .card__heading::after {
     opacity: 1;
     max-height: 1000px;
   }
-  
-  input[type="radio"]:checked ~ .card__heading::after {
-    transform: rotate(90deg) translateX(-0.5rem);
+
+  input[type="radio"]:checked ~ .card__heading .icon {
+    transform: rotate(45deg) translateX(-0.1rem) translateY(0.3rem);
     transition: all 0.3s linear;
   }
 }
