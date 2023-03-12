@@ -68,19 +68,6 @@ input[type="radio"] {
   appearance: none;
 }
 
-input[type="radio"]:checked + .card__heading {
-  color: var(--yellow);
-}
-
-input[type="radio"]:active + .card__heading {
-  color: #fff;
-}
-
-input[type="radio"]:active ~ .meme {
-  opacity: 0.3;
-  transition: all 0.5s linear;
-}
-
 .card__heading {
   display: flex;
   justify-content: space-between;
@@ -122,6 +109,21 @@ input[type="radio"]:checked ~ .meme {
 input[type="radio"]:checked ~ .card__heading .icon {
   transform: rotate(45deg);
   transition: all 0.3s linear;
+}
+
+input[type="radio"]:checked + .card__heading {
+  color: var(--yellow);
+  transition: all 0.5s linear;
+}
+
+input[type="radio"]:active + .card__heading {
+  color: #fff;
+  transition: all 0.5s linear;
+}
+
+input[type="radio"]:active ~ .meme {
+  opacity: 0.3;
+  transition: all 0.5s linear;
 }
 
 
@@ -168,7 +170,7 @@ input[type="radio"]:checked ~ .card__heading .icon {
 
 
 /* --- DESKTOP --- */
-@media (min-width: 1920px) {
+@media (min-width: 1080px) {
   
   .accordion {
     width: 30rem;
